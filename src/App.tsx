@@ -9,6 +9,7 @@ import { ISourceOptions } from "tsparticles-engine";
 import Login from "./component/Login";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav";
+import Game from "./component/Game";
 
 
 function App() {
@@ -18,10 +19,10 @@ function App() {
 
     return (
         <>
-         <Nav/>
+         {/* <Nav/> */}
             <Particles options={particlesOptions as ISourceOptions} init={particlesInit}/>
             {/* <Login/> */}
-           
+           <Game/>
 
         </>
     );
