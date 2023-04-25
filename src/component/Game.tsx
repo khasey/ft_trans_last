@@ -10,7 +10,7 @@ const Game = () => {
         <div className="all_game">
             <div className="all_game_game">
             <div className="all_game_game_pong">
-                   <Pong/> 
+                   {/* <Pong/>  */}
                 </div>
                 <div className="all_game_game_score">
 
@@ -21,9 +21,6 @@ const Game = () => {
 
                     <div className="all_game_chat_text_reply">
 
-                    </div>
-                    <div className="all_game_chat_text_reply1">
-                        
                     </div>
 
                 </div>

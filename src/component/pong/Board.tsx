@@ -1,4 +1,5 @@
 import React from "react";
+import './Board.scss'
 
 interface BoardProps {
   canvasRef: React.RefObject<HTMLCanvasElement>;
@@ -20,7 +21,7 @@ class Board extends React.Component<BoardProps> {
     const render = () => {
       if (!canvas) return;
       // Draw the background
-      ctx.fillStyle = '#000000';
+      ctx.fillStyle = '#111';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw the middle line
@@ -40,9 +41,9 @@ class Board extends React.Component<BoardProps> {
   }
 
   render() {
-    return <canvas ref={this.canvasRef} 
-    width={840} 
-    height={535} 
+    return <canvas ref={this.canvasRef} className="board"
+    width={1200} 
+    height={700} 
     />;
   }
 }
