@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from 'react';
-
+import React from "react";
 
 interface BoardProps {
   canvasRef: React.RefObject<HTMLCanvasElement>;
@@ -10,25 +9,42 @@ class Board extends React.Component<BoardProps> {
 
   componentDidMount() {
     const canvas = this.canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    const { width, height } = canvas;
+    const ctx = canvas?.getContext('2d') as CanvasRenderingContext2D | null;
 
-    // Draw the board background
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, width, height);
+    if (!ctx) {
+      throw new Error('Could not get 2D rendering context');
+    }
 
-    // Draw the net
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.moveTo(width / 2, 0);
-    ctx.lineTo(width / 2, height);
-    ctx.stroke();
+    let animationFrameId: number;
 
-    // rest of the code...
+    const render = () => {
+      if (!canvas) return;
+      // Draw the background
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the middle line
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(canvas.width  / 2 - 1, 0, 2, canvas.height);
+
+      // Request a new animation frame
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    // Clean up the animation frame when the component unmounts
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
   }
-  return <canvas ref={canvasRef} width={640} height={480} />;
-  // rest of the code...
+
+  render() {
+    return <canvas ref={this.canvasRef} 
+    width={840} 
+    height={535} 
+    />;
+  }
 }
 
 export default Board;

@@ -30,7 +30,7 @@ class Pong extends Component<{}, PongState> {
       ballY: 300,
       ballSpeedX: 5,
       ballSpeedY: 5,
-      ballSize: 10,
+      ballSize: 20,
       player1Y: 250,
       player2Y: 250,
     };
@@ -99,25 +99,25 @@ class Pong extends Component<{}, PongState> {
 }
 
 handleMouseMove = (event: React.MouseEvent<HTMLCanvasElement>) => {
-const canvas = this.canvasRef.current;
-if (canvas) {
-const rect = canvas.getBoundingClientRect();
-const mouseY = event.clientY - rect.top - canvas.height / 2;
-this.setState({ player1Y: mouseY });
-}
+  const canvas = this.canvasRef.current;
+  if (canvas) {
+    const rect = canvas.getBoundingClientRect();
+    const mouseY = event.clientY - rect.top - canvas.height / 2;
+    this.setState({ player1Y: mouseY });
+  }
 };
 
 render() {
 const { ballX, ballY, ballSize, player1Y, player2Y } = this.state;
 return (
-<div style={{ position: 'relative' }}>
-<Board canvasRef={this.canvasRef} onMouseMove={this.handleMouseMove} />
-<Ball x={ballX} y={ballY} size={ballSize} />
-<Paddle x={10} y={player1Y} width={10} height={60} />
-<Paddle x={620} y={player2Y} width={10} height={60} />
-</div>
-);
-}
+  <div style={{ position: 'relative' }}>
+    <Board canvasRef={this.canvasRef} />
+    <Ball x={ballX} y={ballY} size={ballSize} />
+    <Paddle x={10} y={player1Y} width={10} height={80} />
+    <Paddle x={820} y={player2Y} width={10} height={80} />
+  </div>
+  );
+  }
 }
 
 export default Pong;
