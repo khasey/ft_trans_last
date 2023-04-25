@@ -1,46 +1,50 @@
 import React from 'react'
 import Logo from './logo/Logo'
 import './Nav.scss'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function Nav() {
+
+    const navigate = useNavigate();
+
     return (
         <div className="container">
             <div className="container_logo">
                 <Logo/>
             </div>
             <div className="container_link">
-                <div className="container_link_text1">
+                <NavLink to={'/game'}  style={{textDecoration: 'none'}} className="container_link_text0">
+                    <div className="container_link_text0_boutton">
+
+                    </div>
+                    <span onClick={() => navigate('game')} className="container_link_text0_t">
+                        GAME
+                    </span>
+                </NavLink>
+                <NavLink to={'/score'}  style={{textDecoration: 'none'}} className="container_link_text1">
                     <div className="container_link_text1_boutton">
 
                     </div>
-                    <span className="container_link_text1_t">
+                    <span onClick={() => navigate('score')} className="container_link_text1_t">
                         SCOREBOARD
                     </span>
-                </div>
-                <div className="container_link_text2">
+                </NavLink>
+                <NavLink to={'/rules'} style={{textDecoration: 'none'}} className="container_link_text2">
                     <div className="container_link_text2_boutton">
                         
                         </div>
-                    <span className="container_link_text2_y">
+                    <span  onClick={() => navigate('rules')}className="container_link_text2_y">
                         RULES
                     </span>
-                </div>
-                <div className="container_link_text3">
+                </NavLink>
+                <NavLink to={'/credits'} style={{textDecoration: 'none'}} className="container_link_text3" >
                     <div className="container_link_text3_boutton">
                         
-                        </div>
-                    <span className="container_link_text3_u">
+                    </div>
+                    <span  onClick={() => navigate('credits')} className="container_link_text3_u">
                         CREDIT
                     </span>
-                </div>
-                <div className="container_link_user">
-                    <div className="container_link_user_photo">
-
-                    </div>
-                    <div className="container_link_user_name">
-                        
-                    </div>
-                </div>
+                </NavLink>
             </div>
             
         </div>
