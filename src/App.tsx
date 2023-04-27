@@ -21,18 +21,14 @@ function App() {
 
     return (
         <>
-         <Nav/>
          <Routes>
-         {/* <Route path="/" element={<Game/>}></Route> */}
-            <Route path="game" element={<Game/>}></Route>
-            <Route path="score" element={<Scoreboard/>}></Route>
-            <Route path="rules" element={<Rules/>}></Route>
-            <Route path="credits" element={<Credits/>}></Route>
+            <Route path="/" element={<Login/>}/>
+            <Route path="game" element={<><><Nav /></><Game /></>}/>
+            <Route path="score" element={<><><Nav/></><Scoreboard/></>}></Route>
+            <Route path="rules" element={<><><Nav/></><Rules/></>}></Route>
+            <Route path="credits" element={<><><Nav/></><Credits/></>}></Route>
          </Routes>
          <Particles options={particlesOptions as ISourceOptions} init={particlesInit}/>
-            {/* <Login/> */}
-           {/* <Game/> */}
-
         </>
     );
 }
