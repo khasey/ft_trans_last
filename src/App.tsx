@@ -12,6 +12,7 @@ import Game from "./component/Game";
 import Scoreboard from "./component/Scoreboard";
 import Rules from "./component/Rules";
 import Credits from "./component/Credits";
+import Profil from "./component/Profil";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <>
          <Routes>
             <Route path="/" element={<Login/>}/>
+            <Route path="profil" element={<Profil/>}/>
             <Route path="game" element={<><><Nav /></><Game /></>}/>
             <Route path="score" element={<><><Nav/></><Scoreboard/></>}></Route>
             <Route path="rules" element={<><><Nav/></><Rules/></>}></Route>
