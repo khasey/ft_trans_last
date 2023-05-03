@@ -2,8 +2,29 @@ import React from 'react'
 import './Profil.scss'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { User, getUserData } from './auth';
+import { Avatar, Box, Button, Stack, TextField, styled } from '@mui/material';
+import { AccountCircle } from '@mui/icons-material';
+import { Shadow } from 'tsparticles-engine';
 
-
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    color: 'blue',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'white',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'white',
+    },
+    '&:hover fieldset': {
+      borderColor: 'white',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'white',
+    },
+  },
+});
 
 function Profil() {
 
@@ -32,26 +53,45 @@ function Profil() {
 
   return (
     <div className="profil">
-      <div className="profil_in">
-        <div className="profil_in_up">
-          <div className="profil_in_up_photo">
-          {user && <img src={user.image_url} alt={user.login} />}
-          </div>
-          <div className="profil_in_up_name">
-            {user &&<p className="profil_in_up_name_text">{user.login}</p>}
-          </div>
-        </div>
-        <div className="profil_in_middle">
-
-        </div>
-        <NavLink className="profil_in_down" to={'/game'} style={{textDecoration: 'none'}}>
-          <div onClick={() => navigate('game')} className="profil_in_down_button">
-            <p className="profil_in_down_button_text">
-              SAVE & PLAY
+      <Stack direction='column' spacing={3} className="profil_in">
+        
+        <Box sx={{ display: 'flex', alignItems:'center', justifyContent:'flex-start', gap:'10px'}}>
+          <Avatar alt="Kevin" src="/static/images/avatar/1.jpg" 
+          sx={{
+            backgroundColor: 'blue',
+            width:'80px',
+            height:'80px',
+            boxShadow: '0px 2px 5px 0px black',
+          
+          }}/>
+          <div className="profil_in_name">
+            <p className="profil_in_name_text">
+              kthierry
             </p>
           </div>
+        </Box>
+        
+        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+          {/* <TextField color="info" id="input-with-sx" label="Choose a username" variant="standard" sx={{}}/> */}
+          <CssTextField label="Choose a username" id="custom-css-outlined-input" sx={{color:'white'}}/>
+        </Box>
+        <NavLink to={'/game'}>
+          <Button variant="contained" onClick={() => navigate('game')}
+          sx={{
+            width: 250,
+            height: 60,
+            borderRadius: 40,
+            fontSize: 'large',
+            backgroundColor:'Blue',
+            color:'white',
+            '&:hover' : {
+              backgroundColor:'rgb(0, 60, 252)',
+            },
+          }}>
+          Save & Connect
+          </Button>
         </NavLink>
-      </div>
+      </Stack>
     </div>
   )
 }

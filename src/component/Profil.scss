@@ -8,97 +8,32 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        width: 450px;
-        height: 80vh;
-        background-color: aliceblue;
+        width: 300px;
+        height: 30vh;
+        background-color: rgb(5, 72, 255);
         border-radius: 40px;
-        background: radial-gradient(circle, rgba(0, 0, 0, 0.226) 2%, rgba(0, 94, 255, 0.158) 82%, rgba(0, 38, 252, 0.233) 100%); 
+        // background: radial-gradient(circle, rgba(0, 0, 0, 0.226) 2%, rgba(0, 94, 255, 0.158) 82%, rgba(0, 38, 252, 0.233) 100%); 
         border-width: 10px;
         border: 2px ridge aliceblue;
         border-color: aliceblue;
         animation: glow 4s ease infinite;
-        gap: 30px;
-        &_up{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: start;
-            width: 90%;
-            height: 15%;
-            background-color: rgba(240, 248, 255, 0);
-            border-radius: 40px;
-            border: 1px ridge aliceblue;
-            &_photo{
-                width: 130px;
-                height: 130px;
-                border-radius: 50%;
-                background-color: rgb(0, 0, 0);
-                margin-left: -7px;
-                z-index: 1;
-                border: 2px ridge aliceblue;
-            }
-            &_name{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 50%;
-                height: 100%;
-                // background-color: aqua;
-                margin-left: 5px;
-                &_text{
-                    font-size: 40px;
-                    color: aliceblue;
-                }
-            }
-        }
-        &_middle{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50%;
-            width: 90%;
-            border: 2px ridge aliceblue;
-            border-radius: 40px;
-        }
-        &_down{
+        background: radial-gradient(circle, rgb(0, 93, 168) 0%, rgb(0, 32, 214) 82%, rgb(0, 17, 114) 100%); 
+        &_name{
+            background-color: blue;
+            width: 150px;
+            height: 40px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 90%;
-            height: 15%;
-            background-color: rgba(240, 248, 255, 0);
+            justify-content: flex-start;
             border-radius: 40px;
-            border: 2px ridge aliceblue;
-            &_button{
-                width: 100%;
-                height: 100%;
-                color: rgba(255, 255, 255, 0.123);
-                font-size: 30px;
-                background-color: rgb(0, 0, 0);
-                border-radius: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.452);
+            &_text{
+                margin-left: 20px;
+                font-size: large;
+                color: white;
+                
             }
-        }
-    }
-}
 
-@keyframes glow {
-    0%{
-        box-shadow: 0px 0px 0px 1px rgb(0, 38, 252);
+        }
     }
-    50%{
-        box-shadow: 0px 0px 100px 1px rgb(0, 38, 252);
-    }
-    100%{
-        box-shadow: 0px 0px 0px 1px rgb(0, 38, 252);
-    }
-}
-
-.profil_in_down_button:hover{
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
 }
