@@ -9,10 +9,11 @@ import Login from "./component/Login";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav";
 import Game from "./component/Game";
-import Scoreboard from "./component/Scoreboard";
+import Scoreboard from "./component/Profil_page";
 import Rules from "./component/Rules";
 import Credits from "./component/Credits";
 import Profil from "./component/Profil";
+import Profil_page from "./component/Profil_page";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
             <Route path="/" element={<Login/>}/>
             <Route path="profil" element={<Profil/>}/>
             <Route path="game" element={<><><Nav /></><Game /></>}/>
-            <Route path="score" element={<><><Nav/></><Scoreboard/></>}></Route>
+            <Route path="Profil_page" element={<><><Nav/></><Profil_page/></>}></Route>
             <Route path="rules" element={<><><Nav/></><Rules/></>}></Route>
             <Route path="credits" element={<><><Nav/></><Credits/></>}></Route>
          </Routes>

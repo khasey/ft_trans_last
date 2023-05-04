@@ -21,12 +21,12 @@ function Nav() {
                         GAME
                     </span>
                 </NavLink>
-                <NavLink to={'/score'}  style={{textDecoration: 'none'}} className="container_link_text1">
+                <NavLink to={'/profil_page'}  style={{textDecoration: 'none'}} className="container_link_text1">
                     <div className="container_link_text1_boutton">
 
                     </div>
-                    <span onClick={() => navigate('score')} className="container_link_text1_t">
-                        SCOREBOARD
+                    <span onClick={() => navigate('profil_page')} className="container_link_text1_t">
+                        PROFIL
                     </span>
                 </NavLink>
                 <NavLink to={'/rules'} style={{textDecoration: 'none'}} className="container_link_text2">

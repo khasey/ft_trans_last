@@ -73,7 +73,36 @@ function Profil() {
         
         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
           {/* <TextField color="info" id="input-with-sx" label="Choose a username" variant="standard" sx={{}}/> */}
-          <CssTextField label="Choose a username" id="custom-css-outlined-input" sx={{color:'white'}}/>
+          {/* <CssTextField label="Choose a username" id="custom-css-outlined-input" sx={{color:'white'}}/> */}
+          <TextField label="Choose a username"
+          type="Text"
+          InputLabelProps={{
+            style: { color: "white" },
+          }}
+          inputProps={{
+            style: { color: "white" },
+          }}
+          sx={{
+            ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
+              color: "white",
+            },
+          }}
+          InputProps={{
+            sx: {
+              ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                border: "2px solid white",
+              },
+              "&:hover": {
+                ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                  border: "2px solid white",
+                },
+              },
+            },
+          }}
+          size="medium"
+          variant="outlined"
+          fullWidth
+           />
         </Box>
         <NavLink to={'/game'}>
           <Button variant="contained" onClick={() => navigate('game')}
