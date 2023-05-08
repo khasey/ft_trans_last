@@ -2,6 +2,7 @@ import React from 'react'
 import './Profil_page.scss'
 import { Avatar, Box, Button, ButtonGroup, Switch, TextField, Typography, alpha, styled } from '@mui/material'
 import { pink } from '@mui/material/colors';
+import DataGridDemo from './Profil_page_grid';
 
 
 
@@ -39,6 +40,10 @@ function Scoreboard() {
 
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" 
           sx={{
+            "@media screen and (width < 1500px)":{
+              width:'70px',
+              height:'70px',
+            },
             "@media screen and (width < 1000px)":{
               width:'60px',
               height:'60px',
@@ -52,10 +57,10 @@ function Scoreboard() {
         <TextField
           sx={{
             "@media screen and (width < 1000px)":{
-              marginRight:'3vw',
+              marginRight:'15vw',
             },
-            "@media screen and (width < 1500px)":{
-              marginRight:'10vw',
+            "@media screen and (width < 1500px) and (width > 1000px)":{
+              marginRight:'35vw',
             },
             marginRight:'45vw',
           }}
@@ -67,8 +72,12 @@ function Scoreboard() {
           }}
           InputProps={{
             sx: {
+              "@media screen and (width < 1000px)":{
+                width:'110px',
+                height:'40px',
+              },
               ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-                border: "2px solid white",
+                border: "1px solid white",
               },
               "&:hover": {
                 ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
@@ -88,11 +97,11 @@ function Scoreboard() {
 
           <Typography variant="h6" gutterBottom sx={{
             "@media screen and (width < 1000px)":{
-              fontSize:'15px',
-              margin:'10px',
+              fontSize:'12px',
+              // margin:'10px',
             },
             "@media screen and (width < 1500px) and (width > 1000px)":{
-              fontSize:'20px',
+              fontSize:'16px',
             },
             margin:'0',
             color:'white',
@@ -100,12 +109,10 @@ function Scoreboard() {
              Enable 2fa
           </Typography>
           <PinkSwitch defaultChecked sx={{
-            margin:'10px'
+            // margin:'10px'
             }} />
-          
-
         </div>
-        
+            
         <div className="all_score_score">
           <div className="all_score_score_date">
             <Box
@@ -133,6 +140,8 @@ function Scoreboard() {
             </Box>
           </div>
           <div className="all_score_score_stats">
+
+              <DataGridDemo/>
 
           </div>
         </div>

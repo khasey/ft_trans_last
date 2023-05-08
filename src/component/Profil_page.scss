@@ -35,10 +35,10 @@
         &_avatar{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             width: 100%;
             height: 20%;
-            // background-color: aliceblue;
+            //background-color: aliceblue;
             border-top-right-radius: 40px;
             border-top-left-radius: 40px;
             border-bottom: 1px white solid;

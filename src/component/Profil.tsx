@@ -58,6 +58,11 @@ function Profil() {
         <Box sx={{ display: 'flex', alignItems:'center', justifyContent:'flex-start', gap:'10px'}}>
           <Avatar alt="Kevin" src="/static/images/avatar/1.jpg" 
           sx={{
+            "@media screen and (width < 1500px)":{
+              fontSize:'15px',
+              width:'60px',
+              height:'60px',
+            },
             backgroundColor: 'blue',
             width:'80px',
             height:'80px',
@@ -72,10 +77,9 @@ function Profil() {
         </Box>
         
         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-          {/* <TextField color="info" id="input-with-sx" label="Choose a username" variant="standard" sx={{}}/> */}
-          {/* <CssTextField label="Choose a username" id="custom-css-outlined-input" sx={{color:'white'}}/> */}
           <TextField label="Choose a username"
           type="Text"
+          margin="none"
           InputLabelProps={{
             style: { color: "white" },
           }}
@@ -83,12 +87,18 @@ function Profil() {
             style: { color: "white" },
           }}
           sx={{
+            "@media screen and (width < 1500px)":{
+              width: 200,
+            },
             ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
               color: "white",
             },
           }}
           InputProps={{
             sx: {
+              "@media screen and (width < 1500px)":{
+                fontSize:'10px',
+              },
               ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
                 border: "2px solid white",
               },
@@ -106,7 +116,12 @@ function Profil() {
         </Box>
         <NavLink to={'/game'}>
           <Button variant="contained" onClick={() => navigate('game')}
-          sx={{
+          sx={{    
+            "@media screen and (width < 1500px)":{
+              width: 200,
+              fontSize:'15px',
+              margin:'0px',
+            },
             width: 250,
             height: 60,
             borderRadius: 40,
