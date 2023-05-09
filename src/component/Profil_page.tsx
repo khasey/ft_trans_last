@@ -2,7 +2,6 @@ import React from 'react'
 import './Profil_page.scss'
 import { Avatar, Box, Button, ButtonGroup, Switch, TextField, Typography, alpha, styled } from '@mui/material'
 import { pink } from '@mui/material/colors';
-import DataGridDemo from './Profil_page_grid';
 
 
 
@@ -140,8 +139,6 @@ function Scoreboard() {
             </Box>
           </div>
           <div className="all_score_score_stats">
-
-              <DataGridDemo/>
 
           </div>
         </div>
