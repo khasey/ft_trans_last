@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from './logo/Logo'
 import './Nav.scss'
 import { NavLink, useNavigate } from 'react-router-dom'
+import './Chat.scss'
 
 function Nav() {
 
     const navigate = useNavigate();
+
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+    const handleChatClick = () => {
+        setIsDrawerOpen(!isDrawerOpen);
+    };
+    
 
     return (
         <div className="container">
@@ -45,8 +53,30 @@ function Nav() {
                         CREDIT
                     </span>
                 </NavLink>
+                <div style={{textDecoration: 'none'}} className="container_link_text4" >
+                    <div className="container_link_text4_boutton">
+                        
+                    </div>
+                    <span className="container_link_text4_u" onClick={handleChatClick}>
+                        CHAT
+                    </span>
+                </div>
             </div>
-            
+            {isDrawerOpen && (
+        <div className="drawer">
+            <div className="drawer-content">
+                <div className="drawer-header">
+                    <h2>Chat</h2>
+                    </div>
+                    <div className="drawer-body">
+                        <p>Chat</p>
+                    </div>
+                    <div className="drawer-footer">
+                        <p>Chat</p>
+                </div>
+            </div>
+        </div>
+        )}
         </div>
     )
 }

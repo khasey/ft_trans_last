@@ -9,11 +9,11 @@ import Login from "./component/Login";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav";
 import Game from "./component/Game";
-import Scoreboard from "./component/Profil_page";
 import Rules from "./component/Rules";
 import Credits from "./component/Credits";
 import Profil from "./component/Profil";
 import Profil_page from "./component/Profil_page";
+
 
 
 function App() {
