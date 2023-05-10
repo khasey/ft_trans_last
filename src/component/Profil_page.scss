@@ -122,7 +122,9 @@
                 flex-direction: column;
                 width: 100%;
                 height: 100%;
+                z-index: -1;
                 &_bar{
+                    z-index: -1;
                     width: 90%;
                     height: 20%;
                     border-radius: 20px;

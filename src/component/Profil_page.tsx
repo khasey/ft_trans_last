@@ -103,7 +103,7 @@ function Scoreboard() {
               fontSize:'16px',
             },
             margin:'0',
-            color:'white',
+            color:'black',
           }}>
              Enable 2fa
           </Typography>

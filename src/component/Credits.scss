@@ -3,15 +3,17 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    z-index: 1;
     &_credits{
-        position: fixed;
+        z-index: 0;
+        // position: fixed;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 85vw;
         height: 90vh;
         margin-left: 10vw;
-        background-color: aliceblue;
+        background-color: #000000;
         border-radius: 40px;
         background: rgba( 255, 255, 255, 0.05 );
         box-shadow: 0 0px 52px 0 rgba(5, 197, 255, 0.212);
