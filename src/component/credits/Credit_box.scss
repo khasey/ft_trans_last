@@ -1,0 +1,79 @@
+.credit_box{
+    width: 50%;
+    height: 100%;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2.5px );
+    -webkit-backdrop-filter: blur( 2.5px );
+    border-radius: 40px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 10px;
+    @media screen and (width < 1000px) {
+        width: 50%;
+        height: 100%;
+        margin: 5px;
+        flex-direction: column;
+
+    }
+    &_left{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        // background-color: rgba(0, 255, 255, 0.353);
+        &_photo{
+            margin: 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            @media screen and (width < 1000px) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        &_name{
+            margin-top: 40px;
+            margin-left: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.642);
+            @media screen and (width < 1000px) {
+                font-size: 20px;
+            }
+        }
+        &_job{
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(255, 255, 255, 0.642);
+            @media screen and (width < 1000px) {
+                font-size: 15px;
+            }
+        }
+    }
+    &_right{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        gap: 40px;
+        @media screen and (width < 1000px) {
+            gap: 10px;
+        }
+        // background-color: rgba(255, 0, 255, 0.353);
+        &_icon{
+            color: rgba(255, 255, 255, 0.642);
+            margin-bottom: 40px;
+            @media screen and (width < 1000px) {
+                
+            }
+        }
+    }
+}

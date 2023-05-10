@@ -14,6 +14,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
+import './Backdrop.scss';
 
 type Anchor = 'right';
 
@@ -36,41 +37,6 @@ export default function Backdrop() {
 
       setState({ ...state, [anchor]: open });
     };
-
-// const list = (anchor: Anchor) => (
-//     <Box
-//       role="presentation"
-//       onClick={toggleDrawer(anchor, false)}
-//       onKeyDown={toggleDrawer(anchor, false)}
-//     >
-//       <List>
-//         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-//           <ListItem key={text} disablePadding>
-//             <ListItemButton>
-//               <ListItemIcon>
-//                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-//               </ListItemIcon>
-//               <ListItemText primary={text} />
-//             </ListItemButton>
-//           </ListItem>
-//         ))}
-//       </List>
-//       <Divider />
-//       <List>
-//         {['All mail', 'Trash', 'Spam'].map((text, index) => (
-//           <ListItem key={text} disablePadding>
-//             <ListItemButton>
-//               <ListItemIcon>
-//                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-//               </ListItemIcon>
-//               <ListItemText primary={text} />
-//             </ListItemButton>
-//           </ListItem>
-//         ))}
-//       </List>
-//     </Box>
-//   );
-
   return (
     <div>
       {(['right'] as const).map((anchor) => (
@@ -99,6 +65,9 @@ export default function Backdrop() {
                 alignItems:'center',
                 gap:'5px',
                 backgroundColor:'black',
+                "@media screen and (width < 1500px)":{
+                  width:'350px',
+                },
             }}>
                 {/* ----------------title------------ */}
                 <Box className="inside_chat_title"
@@ -110,9 +79,10 @@ export default function Backdrop() {
                     height:'100px',
                     backgroundColor:'white',
                     borderRadius: '40px',
+                    marginTop:'5px',
                 }}
                 >
-                    <span className="inside_chat_title_text" style={{fontSize:'40px'}}>CHAT</span>
+                    <div className="inside_chat_title_text" >CHAT</div>
                 </Box>
                 {/* ------------------profil-section---------------- */}
                 <Box className="inside_chat_profil"
@@ -129,6 +99,10 @@ export default function Backdrop() {
                     sx={{
                         width:'100px',
                         height:'100px',
+                        "@media screen and (width < 1500px)":{
+                          width:'80px',
+                          height:'80px',
+                        },
                     }}>
 
                     </Avatar>
@@ -139,6 +113,10 @@ export default function Backdrop() {
                         marginLeft:'10px',
                         border:'solid black 2px',
                         borderRadius:'40px',
+                        "@media screen and (width < 1500px)":{
+                          width:'150px',
+                          height:'40px',
+                        },
                     }}>
                     </Box>
                 </Box>
@@ -153,10 +131,13 @@ export default function Backdrop() {
                     backgroundColor:'white',
                     borderRadius:'40px',
                     gap:'100px',
+                    "@media screen and (width < 1500px)":{
+                      gap:'60px',
+                    },
                 }}>
-                    <Diversity3Icon style={{fontSize:'50px', cursor:'pointer'}}/>
-                    <PersonAddIcon style={{fontSize:'50px', cursor:'pointer'}}/>
-                    <GroupAddIcon style={{fontSize:'50px', cursor:'pointer'}}/>
+                    <Diversity3Icon className='inside_chat_icon_1'/>
+                    <PersonAddIcon className='inside_chat_icon_2'/>
+                    <GroupAddIcon  className='inside_chat_icon_3'/>
                 </Box>
                 {/* -------------------------chat area------------------------ */}
                 <Box className="inside_chat_chatArea" 

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Login.scss'
 import Ball from'./ball/Ball'
+import Connect from './connection/Connect';
 
 function Login() {
   const handleLogin = () => {
@@ -11,13 +12,13 @@ function Login() {
 
   return (
     <div className="all">
-      <div className="all_b"></div>
-      <div className="all_in">
-        <div className="all_in_ball"></div>
+      {/* <div className="all_in">
         <button className="all_in_button" onClick={handleLogin}>
           <span className="all_in_button_text">CONNECT</span>
         </button>
-      </div>
+        
+      </div> */}
+      <Connect/>
     </div>
   );
 }

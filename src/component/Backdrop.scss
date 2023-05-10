@@ -1,0 +1,26 @@
+.inside_chat_icon_1{
+    font-size:50px; 
+    cursor: pointer;
+}
+.inside_chat_icon_2{
+    font-size:50px; 
+    cursor: pointer;
+
+}
+.inside_chat_icon_3{
+    font-size:50px; 
+    cursor: pointer;
+}
+
+.inside_chat_title_text{
+    font-size: 40px;
+}
+
+@media screen and (max-width: 1500px) {
+    .inside_chat_title_text {
+    font-size: 30px;
+    }
+    .inside_chat_title_text{
+        font-size: 30px;
+    }
+}
