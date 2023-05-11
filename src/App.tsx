@@ -13,6 +13,7 @@ import Rules from "./component/Rules";
 import Credits from "./component/Credits";
 import Profil from "./component/Profil";
 import Profil_page from "./component/Profil_page";
+import Intro from "./component/intro/Intro";
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <>
          <Routes>
             <Route path="/" element={<Login/>}/>
+            <Route path="intro" element={<Intro/>}/>
             <Route path="profil" element={<Profil/>}/>
             <Route path="game" element={<><><Nav /></><Game /></>}/>
             <Route path="Profil_page" element={<><><Nav/></><Profil_page/></>}></Route>

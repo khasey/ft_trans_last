@@ -6,25 +6,6 @@ import { Avatar, Box, Button, Stack, TextField, styled } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
 import { Shadow } from 'tsparticles-engine';
 
-const CssTextField = styled(TextField)({
-  '& label.Mui-focused': {
-    color: 'blue',
-  },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: 'white',
-  },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: 'white',
-    },
-    '&:hover fieldset': {
-      borderColor: 'white',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: 'white',
-    },
-  },
-});
 
 function Profil() {
 
@@ -54,29 +35,29 @@ function Profil() {
   return (
     <div className="profil">
       <Stack direction='column' spacing={3} className="profil_in">
-        
-        <Box sx={{ display: 'flex', alignItems:'center', justifyContent:'flex-start', gap:'10px'}}>
+        <Stack direction='column' spacing={3} className="profil_in2" sx={{
+          gap:'5%',
+        }}>
+        <Box sx={{ display: 'flex', flexDirection:'row', gap:'15px', marginTop:'-10%'}}>
           <Avatar alt="Kevin" src="/static/images/avatar/1.jpg" 
           sx={{
-            "@media screen and (width < 1500px)":{
-              fontSize:'15px',
-              width:'60px',
-              height:'60px',
-            },
-            backgroundColor: 'blue',
-            width:'80px',
-            height:'80px',
-            boxShadow: '0px 2px 5px 0px black',
+            // "@media screen and (width < 1500px)":{
+            //   fontSize:'15px',
+            //   width:'80px',
+            //   height:'80px',
+            // },
+            backgroundColor: 'white',
+            width:'90px',
+            height:'90px',
           
           }}/>
           <div className="profil_in_name">
-            <p className="profil_in_name_text">
+            <p className="profil_in_name_text" style={{fontSize:'20px', marginTop:'25%'}}>
               kthierry
             </p>
           </div>
         </Box>
-        
-        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <Box sx={{}}>
           <TextField label="Choose a username"
           type="Text"
           margin="none"
@@ -87,18 +68,18 @@ function Profil() {
             style: { color: "white" },
           }}
           sx={{
-            "@media screen and (width < 1500px)":{
-              width: 200,
-            },
+            // "@media screen and (width < 1500px)":{
+            //   // width: 200,
+            // },
             ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
               color: "white",
             },
           }}
           InputProps={{
             sx: {
-              "@media screen and (width < 1500px)":{
-                fontSize:'10px',
-              },
+              // "@media screen and (width < 1500px)":{
+              //   fontSize:'10px',
+              // },
               ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
                 border: "2px solid white",
               },
@@ -114,28 +95,15 @@ function Profil() {
           fullWidth
            />
         </Box>
-        <NavLink to={'/game'}>
-          <Button variant="contained" onClick={() => navigate('game')}
-          sx={{    
-            "@media screen and (width < 1500px)":{
-              width: 200,
-              fontSize:'15px',
-              margin:'0px',
-            },
-            width: 250,
-            height: 60,
-            borderRadius: 40,
-            fontSize: 'large',
-            backgroundColor:'Blue',
-            color:'white',
-            '&:hover' : {
-              backgroundColor:'rgb(0, 60, 252)',
-            },
-          }}>
-          Save & Connect
-          </Button>
-        </NavLink>
+          <NavLink  to={'/game'} style={{textDecoration:'none'}}>
+            <div className='profil_in2_button' onClick={() => navigate('game')}>
+              SAVE & START
+            </div>
+          </NavLink>
+          
+        </Stack>
       </Stack>
+      
     </div>
   )
 }
